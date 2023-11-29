@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        #calculator {
+            width: 300px;
+            margin: auto;
+            margin-top: 50px;
+            padding: 10px;
+            border: 2px solid #016de9;
+            border-radius: 10px;
+            background-color: #1c2a2e;
+        }
+
+        .button {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border: 1px solid #b3c5ca;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="calculator">
+    <input type="text" id="display" disabled>
+    <br>
+        <img src="https://cdn5.colorir.com/desenhos/color/201951/numero-1-letras-e-numeros-numeros-1557132.jpg" alt="1" class="button" onclick="appendToDisplay('1')">
+        
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbvdp1e7A4--lkesNqYbUidhXXaemY_dnlOkozAxp0FOJAknu3Qc1KAyNrLoNqRaXwEbw&usqp=CAU" alt="2" class="button" onclick="appendToDisplay('2')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf1AXGKHtM3GUfeV8LAb7RuCY-qEA2Rkzu-wk6r34vm6u46lB5LoOAt0DEnzM8EJIxZZA&usqp=CAU" alt="3" class="button" onclick="appendToDisplay('3')">
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAflBMVEX///8AAAABAQH8/Pz5+fkICAhVVVVaWlqtra3i4uJ/f3/Q0NC9vb329vYFBQUKCgrv7+8SEhLr6+tSUlIZGRmxsbGSkpIkJCTb29tMTExgYGB4eHhHR0ejo6MpKSmBgYE6OjqKiorExMRvb29nZ2cwMDCbm5scHBwmJibV1dUbanMRAAAEd0lEQVR4nO2d65LaOBBGJUvmMiDJNjAwOJNkJplc3v8FVy2zW6natdUsIu7Z/U5S/IkROmqJSqHPslIAAAAAAAAAAAAAAAAAAHinmBHm7tfVvFsRm/5EAefoZfpSRT7WKIleJvbPUOeU2jz0j58eRugf+k+HLtmo4XJxUNdiJTaf9T7ooEfw3lfV8WWoilUCTYYhVqcfeq/1d+rwP1JHF62PvYvS5vIuWQxdcm+6arWuxwpCJdFVVNlGkctiEQYNr1VbHyeVr2jURwg066qwbKQuEZVE+jjc1NVREfoHUtl3QpfIpVu7yvvU3WoEKlecWlXoLH3/zt3pEaxaUF851Gsl1wMi4oCINCAiDYhIAyLSgIg0ICINiEgDItKAiDQgIg2ISAMi0oCINCAiDekinI1+N1y4ZIucFG1x5TdDTdrTu12ZHVaw1l0jEtaq+c0FMXE88qSJYtyOLdJRER2jZcMoW0ndwZldEX+iUk9GPX5t+3YXl2IjLjt08ZOa2C22SHtyDXUx126TOlAmWGBoqWWnVhpe88QV0esUvckOkLpimeY8VC7uQ9BSV86d2RXZRAvGOKe0keVNwaxG8/qyzHFenJeLp75lV2S5O5/ju7INf3nuyiQ9rHJPXtdjAYC/BQKYcNsLWh8PQwDnVrqn4Gs/l0hV63q/KhFRs4+aQhdziXhKr7y520WcO1IAazZIZK+fb59abk2NjQbi7g8l1fzXAlNrS0Gx8fjVval0G1+XBURWgSJx7LlfmjqKtHpx+9Sym5mnFn10+HCziFHbtN5mqwhRVbdXBCIQgQhEIAIRiEAEIhCBCEQgAhGIQAQi/ysRZUhkxp+x4yiGEj/QKfWa7hOeDfqhsdbLAomBbZxWEzdD352qih1YFPk1vp24h/h3mATtdwWm1inEIQmzLXYfP7n2fYHFrt5iQ+VLwt6qC/R3W2BbQX07VuN3dd99D1EHr8OuKTC1jOp1HUbPcPiTfyuSazfEeb0vstNulFl9ZnXN0zYZ22XYBsvuIHnd9mtu+mbSgxJM3eawyjBc8PyBKxIeD4dVttXIdm1NUybCQa3kW0rBPsePOf1kRn7ML6+3kI5tiSNiMzirTENnPnArclKNdZx2TaHDOq5opjH8vFZYU8SLU+h0ukcJ0v8OOIEkcmanTPU6tckIZ1redTkoTcZpxQyjyxbx3RDn5PTBcIJd+VZS8Cx7GZ2KEo2vmVq8L1XWMJZGeoCZDUSkARFpQEQaEJEGRKQBEWlARBoQkQZEpAERaUBEGhCRBkSkARFpQEQa/wkRl7ZkFrr1k48koMhUW+sqrMvsqJVn2LI6e3p4At0UO2pCYaM9VUToIwnSk1TcCwUaJhM4PoUe2o9diTjDfaCtzU0sSOyqHz1aoSXL2ute/fWMG3HQA0XMF6+nnz8yBJe+b9JbBHrYy0Z7txgClWNpnyF/9ePZpKNjZIoMr+bbx+kvYK/rr+koJ6Ffv5f9eOOMPW0m+Pm6sbEaSVyoCgAAAAAAAAAAAAAAAAAAwHvgD1hMXX5NHeb6AAAAAElFTkSuQmCC" alt="+" class="button" onclick="appendToDisplay('+')">
+    <br>
+    
+    <img src="https://cdn5.colorir.com/desenhos/color/201643/numero-4-letras-e-numeros-numeros-1309200.jpg" alt="4" class="button" onclick="appendToDisplay('4')">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtXq-rm0uOoAljKH5koAv_cwDxv0ns3gVLCQEgZY5Pe25Don1ckreBa2Fi0QYTTQql-w0&usqp=CAU" alt="5" class="button" onclick="appendToDisplay('5')">
+    
+    <img src="https://cdn5.colorir.com/desenhos/color/201814/numero-6-letras-e-numeros-numeros-1459137.jpg" alt="6" class="button" onclick="appendToDisplay('6')">
+    
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAJFBMVEX///8AAACBgYGdnZ2/v7+VlZW5ubmZmZm8vLzCwsJ8fHzV1dXD/2ZxAAAAdklEQVR4nO3QiQ2AIBAAQfwV++/XFrzkCAZnOtgtBQAAAAAAAAAAAAAAAAAAAAAAAAAA/mubhrenzVp6p7S3mvWeWQFmBZgVYFZA3qyjd0p7Z9qsq86Dq3faLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4iAeXEwk9dVbNvQAAAABJRU5ErkJggg==" alt="-" class="button" onclick="appendToDisplay('-')">
+    <br>
+   
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGO4vW7jp-k8gfeIsyRgT_efJ2vjupqvec9aw_MgEtmwXDkK84cl9cCjpQCxXF7IHNLpE&usqp=CAU" alt="7" class="button" onclick="appendToDisplay('7')">
+   
+    <img src="https://cdn5.colorir.com/desenhos/color/202004/numero-8-letras-e-numeros-numeros-1560524.jpg" alt="8" class="button" onclick="appendToDisplay('8')">
+    
+    <img src="https://cdn5.colorir.com/desenhos/color/201441/numero-9-letras-e-numeros-numeros-pintado-por-l28c04v59-1059355.jpg" alt="9" class="button" onclick="appendToDisplay('9')">
+    
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3UoSeKyJaHMpMNItv4P3xqDGeM2jIr85I2Q&usqp=CAU" alt="" class="button" onclick="appendToDisplay('')">
+    <br>
+    
+    <img src="https://cdn5.colorir.com/desenhos/color/201807/numero-0-letras-e-numeros-numeros-1446766.jpg" alt="0" class="button" onclick="appendToDisplay('0')">
+    
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAQlBMVEX///8AAAD39/f6+vrm5uaRkZH09PR2dnZPT08qKiobGxvExMRZWVlDQ0OwsLAmJiaJiYlUVFSmpqa7u7tMTEx3d3fe/nNSAAAA3ElEQVR4nO3YW27CMBAFUJtXEl6BQve/1QokqjbNp6MR03NWcK+s2DMpBQAAAAAAAAAAAAAAAAAAAAAAAAAAAIAsVrtVdIQFrQ9dP+yHvjuso6Ms4zzWl/EcHWYJx/rTMTpOe9f6Wx8dqLVLnbpER2pr86dgrZvoUE1tZxpuo0M1dZppeIoO1dRMwVqjQzWl4fvL/x3mv0vzv4czh5hsppkO3gnn0unonXC3KOVj/91vSLkflrK7dffHjv+Zdcd/yv2fBgAAAAAAAAAAAAAAAAAAAAAAAAAAAOC/+QJ87gNfimGROQAAAABJRU5ErkJggg==" alt="." class="button" onclick="appendToDisplay('.')">
+    
+    <img src="data:image/png;base64,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" alt="/" class="button" onclick="appendToDisplay('/')">
+    
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAC7CAMAAACjH4DlAAAAM1BMVEX///8AAACVlZWLi4s8PDy9vb38/PwzMzOPj4/4+Pi5ubn5+fmBgYHT09OZmZnPz8+Hh4di4xtkAAABSElEQVR4nO3cSVLDQBBEUWGbNkZM9z8teAPKNYssiPcu4IqvIULulrYNAAAAAAAAAOB/WO0BZtlv7QmOVvvo7NvTaY5t37tB9u1hjuuAa7fd4OAy4F7WbnBw6deQQw455JBDDjnkkEMOOY7kCHIEOYIcQY4gR5AjyBHkCHIEOYIcQY4gR5Aj9HOsSTmu9TXatV7OT0OcT+0a/Q0maZXn+fr5OUW+YrQ3I619To76yQEAAMBfMushsj3MGvVQXR+lPsBRfZi1Xue8/fXWv3LXc/v/8x/Xfo7tsR3hR3+dRQ455JBDDjnkkEMOOeQIcgQ5ghxBjiBHkCPIEeQIcgQ5ghxBjiBHkCPIEfo51jZojfZy/2Bo2aCzo/+90rW9f5ynONVX8NuHI/V3It3f/iqP8O02ZxQAAAAAAAAAAAAAAAAAAAAAAIBf+AS/qi2E+G0idgAAAABJRU5ErkJggg==" alt="=" class="button" onclick="calculate()">
+    
+    <img src="data:image/png;base64,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" alt="C" class="button" onclick="clearDisplay()">
+</div>
+
+<script>
+    function appendToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function calculate() {
+        var result = eval(document.getElementById('display').value);
+        document.getElementById('display').value = result;
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+</script>
+
+</body>
+</html>
