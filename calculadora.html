@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!--começo do cabesalho-->
+<head>
+  <title>Calculadora</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="calculadora.js"></script>
+</head>
+<!--final do cabeçalho-->
+<body style="background-color: blueviolet;"> <!--cor de fundo-->
+    
+    <div>
+        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.wikipedia.org%2Fwiki%2FAzul&psig=AOvVaw1O87VgCzdaCtqmyBdWUI0-&ust=1701179598367000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJjFpoCr5IIDFQAAAAAdAAAAABAE" alt="Descrição da Imagem"> <!--imagem -->
+      </div>
+      
+  <body>
+    <h1>Calculadorakat 1.0</h1>
+    <label for="txtValor1">Valor 1:</label>
+    <input type="text" id="txtValor1" placeholder="Digite o primeiro valor">
+
+    <label for="operadores">Operação:</label>
+    <select id="operadores">
+      <option value="+">Somar</option>
+      <option value="-">Subtrair</option>
+      <option value="*">Multiplicar</option>
+      <option value="/">Dividir</option>
+      </optgroup>
+      <optgroup label="Outros">
+        <option value="Raiz">Raiz</option>
+        <option value="Potencia">Potencia</option>
+        <option value="Fatorial">Fatorial</option>
+        <option value="fibonacci">Fibonacci</option>
+        <option value="porcento">Porcento</option>
+        <option value="media">Media</option>
+        <option value="calc">Develop Calc</option>
+      </optgroup>
+
+
+      <label for="txtValor2">Valor 2:</label>
+      <input type="text" id="txtValor2" placeholder="Digite o segundo valor">
+
+      <label for="tipoNumero">Tipo de Número:</label>
+      <select id="tipoNumero">
+        <option value="int">Número Inteiro</option>
+        <option value="float">Número de Ponto Flutuante</option>
+      </select>
+
+      <button onclick="Calcular()">Calcular</button>
+      <button onclick="Limpar()">Limpar</button>
+
+      <div id="resultado">Resultado:</div>
+      <hr>
+
+      <script> 
+      //scripts//
+        function Calcular() {
+          var valor1 = document.getElementById('txtValor1').value;
+          var valor2 = document.getElementById('txtValor2').value;
+          var operador = document.getElementById('operadores').value;
+          var tipoNumero = document.getElementById('tipoNumero').value;
+          var resultado = 0;
+
+          if (tipoNumero === "int") {
+            valor1 = parseInt(valor1);
+            valor2 = parseInt(valor2);
+          } else if (tipoNumero === "float") {
+            valor1 = parseFloat(valor1);
+            valor2 = parseFloat(valor2);
+          }
+
+          if (isNaN(valor1) || isNaN(valor2)) {
+            alert("Por favor, insira valores numéricos.");
+            return;
+          }
+
+          switch (operador) {
+            case "+":
+              resultado = valor1 + valor2;
+              break;
+            case "-":
+              resultado = valor1 - valor2;
+              break;
+            case "*":
+              resultado = valor1 * valor2;
+              break;
+            case "/":
+              if (valor2 !== 0) {
+                resultado = valor1 / valor2;
+              } else {
+                alert("Não é possível dividir por zero.");
+                return;
+              }
+              break;
+            default:
+              alert("Operador não reconhecido");
+              return;
+          }
+
+          document.getElementById('resultado').innerText = 'Resultado: ' + resultado;
+        }
+
+        function Limpar() {
+          document.getElementById('txtValor1').value = '';
+          document.getElementById('txtValor2').value = '';
+          document.getElementById('resultado').innerText = 'Resultado:';
+        }
+      </script>
+  </body>
+
+</html>
