@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('https://i.pinimg.com/736x/f2/dc/90/f2dc9060a959dcb5981d396a22e80c6b.jpg');
+      /* Substitua pelo caminho da sua imagem de fundo */
+    }
+
+    #calculator {
+      width: 300px;
+      
+      padding: 10px;
+      border-radius: 10px;
+      background-color: mediumvioletred (255, 255, 255, 0.8);
+      /* fundo branco */
+    }
+
+    input[type="text"] {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 18px;
+    }
+
+    input[type="button"] {
+      width: 23%;
+      height: 50px;
+      padding: 10px;
+      font-size: 18px;
+      margin: 5px;
+      cursor: pointer;
+
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="calculator">
+    <!-- Visor da calculadora -->
+    <input type="text" id="display" readonly>
+
+    <!-- Botões numéricos e operadores -->
+    <div>
+      <input type="button" value="1" onclick="appendNumber('1')">
+      <input type="button" value="2" onclick="appendNumber('2')">
+      <input type="button" value="3" onclick="appendNumber('3')">
+      <input type="button" value="/" onclick="appendOperator('/')">
+      <br>
+      <input type="button" value="4" onclick="appendNumber('4')">
+      <input type="button" value="5" onclick="appendNumber('5')">
+      <input type="button" value="6" onclick="appendNumber('6')">
+      <input type="button" value="-" onclick="appendOperator('-')">
+      <br>
+      <input type="button" value="7" onclick="appendNumber('7')">
+      <input type="button" value="8" onclick="appendNumber('8')">
+      <input type="button" value="9" onclick="appendNumber('9')">
+      <input type="button" value="+" onclick="appendOperator('+')">
+      <br>
+      <input type="button" value="0" onclick="appendNumber('0')">
+      <input type="button" value="." onclick="appendDecimal()">
+      <input type="button" value="=" onclick="calculate()">
+      <input type="button" value="C" onclick="clearDisplay()">
+    </div>
+  </div>
+
+  <script>
+    var currentInput = ''; // Variável para armazenar a expressão atual
+
+    // Função para adicionar números ao visor
+    function appendNumber(number) {
+      currentInput += number;
+      updateDisplay();
+    }
+
+    // operadores
+    function appendOperator(operator) {
+      currentInput += operator;
+      updateDisplay();
+    }
+
+    // ponto decimal 
+    function appendDecimal() {
+      var currentDisplay = document.getElementById('display').value;
+      if (currentDisplay.indexOf('.') === -1) {
+        currentInput += '.';
+        updateDisplay();
+      }
+    }
+
+    // calcular e exibir o resultado
+    function calculate() {
+      try {
+        var result = eval(currentInput);
+        document.getElementById('display').value = result;
+        currentInput = result.toString();
+      } catch (error) {
+        document.getElementById('display').value = 'Erro';
+        currentInput = '';
+      }
+    }
+
+    // limpar
+    function clearDisplay() {
+      document.getElementById('display').value = '';
+      currentInput = '';
+    }
+
+    // atualizar o visor com a expressão atual
+    function updateDisplay() {
+      document.getElementById('display').value = currentInput;
+    }
+  </script>
+
+</body>
+
+</html>
