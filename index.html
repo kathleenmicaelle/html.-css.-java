@@ -1,133 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora</title>
+  <title>Raava - Acessórios Eletrônicos</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      background-size: cover;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image: url('https://i.pinimg.com/736x/f2/dc/90/f2dc9060a959dcb5981d396a22e80c6b.jpg');
-     
-    }
 
-    #calculator {
-      width: 300px;
-      
-      padding: 10px;
-      border-radius: 10px;
-      background-color: mediumvioletred (255, 255, 255, 0.8);
-      /* fundo branco */
-    }
-
-    input[type="text"] {
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      box-sizing: border-box;
-      font-size: 18px;
-    }
-
-    input[type="button"] {
-      width: 23%;
-      height: 50px;
-      padding: 10px;
-      font-size: 18px;
-      margin: 5px;
-      cursor: pointer;
-
-      border: 1px solid #ccc;
-    }
   </style>
 </head>
 
 <body>
 
-  <div id="calculator">
-    <!-- Visor da calculadora -->
-    <input type="text" id="display" readonly>
+  <header>
+    Raava - Acessórios Eletrônicos
+  </header>
 
-    <!-- Botões numéricos e operadores -->
-    <div>
-      <input type="button" value="1" onclick="appendNumber('1')">
-      <input type="button" value="2" onclick="appendNumber('2')">
-      <input type="button" value="3" onclick="appendNumber('3')">
-      <input type="button" value="/" onclick="appendOperator('/')">
-      <br>
-      <input type="button" value="4" onclick="appendNumber('4')">
-      <input type="button" value="5" onclick="appendNumber('5')">
-      <input type="button" value="6" onclick="appendNumber('6')">
-      <input type="button" value="-" onclick="appendOperator('-')">
-      <br>
-      <input type="button" value="7" onclick="appendNumber('7')">
-      <input type="button" value="8" onclick="appendNumber('8')">
-      <input type="button" value="9" onclick="appendNumber('9')">
-      <input type="button" value="+" onclick="appendOperator('+')">
-      <br>
-      <input type="button" value="0" onclick="appendNumber('0')">
-      <input type="button" value="." onclick="appendDecimal()">
-      <input type="button" value="=" onclick="calculate()">
-      <input type="button" value="C" onclick="clearDisplay()">
+  <header style="background-color: #FF66C4; color: white; padding: 10px; text-align: center; font-size: 24px;">
+
+    <div style="background-color: #FDCFF2; padding: 10px;">
+      <input type="text" placeholder="Pesquisar..." style="width: 150px;">
+      <button style="background-color: #FF66C4; color: white; border: none; padding: 5px 10px;">Buscar</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#" class="nav-link" onclick="changeColor(this)">Home</a>
+    <a href="#" class="nav-link" onclick="changeColor(this)">Produtos</a>
+    <a href="#" class="nav-link" onclick="changeColor(this)">Sobre</a>
+    <a href="#" class="nav-link" onclick="changeColor(this)">suporte</a>
+    <a href="#" class="loginModal" onclick="changeColor(this)">login</a>
+    <a href="#" class="nav-link" onclick="changeColor(this)">Carrinho</a>
+  </nav>
+
+  <section>
+
+
+  </section>
+
+  <footer>
+    © 2023 Raava - Acessórios Eletrônicos
+  </footer>
+  <div class="imagem-com-borda">
+    <div class="imagem-posicionada">
+      <img
+        src="https://cdn.awsli.com.br/64x50/719/719134/produto/230172217/br-11134207-7qukw-lgq6k90yuzjpc7-locn5gpr59.jfif "
+        width="150" height="150" alt="ventilador" align="" align="midle">
     </div>
   </div>
 
-  <script>
-    var currentInput = ''; // Variável para armazenar a expressão atual
+  <div class="imagem-com-borda">
+    <div class="imagem-posicionada">
 
-    // Função para adicionar números ao visor
-    function appendNumber(number) {
-      currentInput += number;
-      updateDisplay();
-    }
+      <img src=" https://universocases.com.br/cdn/shop/products/S3f2654d8146d45eb9535bb3c3984661fI.jpg?v=1663261797"
+        width="150" height="150" alt="capinha" align="" align="">
 
-    // operadores
-    function appendOperator(operator) {
-      currentInput += operator;
-      updateDisplay();
-    }
+    </div>
+    </div>
 
-    // ponto decimal 
-    function appendDecimal() {
-      var currentDisplay = document.getElementById('display').value;
-      if (currentDisplay.indexOf('.') === -1) {
-        currentInput += '.';
-        updateDisplay();
-      }
-    }
+    <div class="imagem-com-borda">
+      <div class="imagem-posicionada">
 
-    // calcular e exibir o resultado
-    function calculate() {
-      try {
-        var result = eval(currentInput);
-        document.getElementById('display').value = result;
-        currentInput = result.toString();
-      } catch (error) {
-        document.getElementById('display').value = 'Erro';
-        currentInput = '';
-      }
-    }
+        <img
+          src="https://ae01.alicdn.com/kf/Seef1ea74e7114667a9fcf709df74a0918/2022-novo-P9-Max-tws-bluetooth-fone-de-ouvido-sem-fio-cabe-a-montado-fone-de.jpg"
+          width="150" height="150" alt="fone" align="" align="midle">
+      </div>
+       </div>
+      
+      <div class="imagem-com-borda">
+        <div class="imagem-posicionada">
 
-    // limpar
-    function clearDisplay() {
-      document.getElementById('display').value = '';
-      currentInput = '';
-    }
+          <img
+            src="https://www.celularestops.com.br/images/produtos/Pelicula-de-Vidro-temperado-Ultra-resistente-rkb0w90VVa9PU5BuDYdv-2.jpg"
+            width="150" height="150" alt="pelicula" align="" align="midle">
+        </div>
+      </div>
 
-    // atualizar o visor com a expressão atual
-    function updateDisplay() {
-      document.getElementById('display').value = currentInput;
-    }
-  </script>
+      <div class="imagem-com-borda">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/41xI4ucSD7L._AC_UL210_SR210,210_.jpg" width="150"
+          height="150" alt="luminaria" align="" align="midle">
+      </div>
+    </div>
+
+    <div class="imagem-com-borda">
+      <div class="imagem-posicionada">
+
+        <img
+          src="https://pedetrico.com.br/cdn/shop/products/H2d14c3609db5464c8505c62b4c127dc6z.jpg?v=1645814046&width=1445"
+          width="150" height="150" alt="projetor" align="" align="midle">
+      </div>
+    </div>
+
+    <div class="imagem-com-borda">
+
+        <img src="https://t.ctcdn.com.br/JtUc40LmHIwoyutghDh8Q2Be_M4=/716x477/smart/i525465.jpeg" width="150"
+          height="150" alt="relogio" align="" align="midle">
+      
+      </div>
+
+    <div class="imagem-com-borda">
+      <div class="imagem-posicionada">
+
+        <img
+          src="https://burst.shopifycdn.com/photos/mobile-phone-and-gimbal-in-hand.jpg?width=373&format=pjpg&exif=0&iptc=0"
+          width="150" height="150" alt="tripe" align="" align="midle">
+      </div>
+    </div>
+
+    <div class="imagem-com-borda">
+      <div class="imagem-posicionada">
+
+        <img src="https://m.media-amazon.com/images/I/41k8LWo2-gL._AC_UF1000,1000_QL80_.jpg " width="150" height="150"
+          alt="pelicula de camera " align="" align="midle">
+      </div>
+    </div>
+
+    <div class="imagem-com-borda">
+      <div class="imagem-posicionada">
+
+        <img
+          src="https://ae01.alicdn.com/kf/S82abf2b3accb4bb6a0c2fd6a72cd3cbdD/Sanrio-My-Melody-Cartoon-Film-Camera-Japon-s-Kawaii-Cora-o-Conveniente-R-pido-Mut-vel.jpg"
+          width="150" height="150" alt="camera" align="" align="midle">
+      </div>
+    </div>
+
+    <div class="imagem-com-borda">
+      <div class="imagem-posicionada">
+
+        <img src="https://http2.mlstatic.com/D_NQ_NP_691816-MLB54966582637_042023-O.webp" width="150" height="150"
+          alt="caixa de som" align="" align="midle">
+      </div>
+    </div>
+
+    <div class="imagem-com-borda">
+      <div class="imagem-posicionada">
+
+        <img
+          src="https://imageswscdn.wslojas.com.br/files/4342/abajur-decore-luminaria-de-mesa-30cm-1-esfera-opcoes-de-acabamentos-545049.jpg"
+          width="150" height="150" alt="luminaria 2" align="" align="midle">
+      </div>
+    </div>
+
+    <div class="imagem-com-borda">
+      <div class="imagem-posicionada">
+
+        <img src="https://m.media-amazon.com/images/I/61rIDgx5jmL._AC_UF894,1000_QL80_.jpg" width="150" height="150"
+          alt="luz leitura" align="" align="midle">
+      </div>
+    </div>
+
+    <div class="imagem-com-borda">
+      <div class="imagem-posicionada">
+
+        <img
+          src="https://ae01.alicdn.com/kf/H8a8bf2e4f7184490a5811df70250c1f4r/Mini-bonito-5000mah-port-til-power-bank-usb-recarreg-vel-carregador-de-telefone-powerbank-kawaii-m.jpg"
+          width="150" height="150" alt="carregador portatil" align="" align="midle">
+      </div>
+    </div>
+
+    <div class="imagem-com-borda">
+      <div class="imagem-posicionada">
+
+        <img
+          src="https://novagadget.com.br/cdn/shop/files/Sf69cb2f32bc043c98586b552ae69d26en_1f283dfe-7df7-4509-a5cf-56b1dc377a83.webp?v=1697570315&width=533"
+          width="150" height="150" alt="capinha 2" align="" align="midle">
+      </div>
+    </div>
+
+    <div class="imagem-com-borda">
+      <div class="imagem-posicionada">
+        <img
+          src="https://images-americanas.b2w.io/produtos/2276239725/imagens/ring-light-10-polegadas-kit-completo-com-tripe-2-1-metros-dimmer-youtuber-selfie-pro/2276239733_2_large.jpg"
+          width="150" height="150" alt="tripe 2" align="" align="midle">
+      </div>
+    </div>
 
 </body>
 
+<div style="page-break-before: always;">
+
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+    <div class="page">
+      <form method="POST" class="formLogin">
+        <h1>Login</h1>
+        <p>Digite os seus dados de acesso no campo abaixo.</p>
+        <label for="email">E-mail</label>
+        <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
+        <label for="password">Senha</label>
+        <input type="password" placeholder="Digite seu e-mail" />
+        <a href="/">Esqueci minha senha</a>
+        <input type="submit" value="Acessar" class="btn" />
+      </form>
+    </div>
+
+  </body>
+  <body>
+    <header>
+      <h1>Nossa Empresa</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="sobre.html" class="active">Sobre</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="about-us">
+      <h2>Quem Somos</h2>
+      <p>Somos uma empresa dedicada a fornecer os melhores acessórios para celular e pequenos eletrônicos. Nossa missão é sempre deixar o cliente satisfeito com nossos produtos </p>
+    </section>
+
+    <section class="team">
+      <h2>Nossa Equipe</h2>
+      <p>Conheça as mentes criativas por trás dos produtos que oferecemos.</p>
+      <!-- Adicione informações sobre os membros da equipe aqui -->
+    </section>
+
+    <footer>
+      <p>&copy; 2023 Nome da Sua Empresa. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Suporte</title>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              margin: 20px;
+          }
+
+          h1 {
+              color: #333;
+          }
+
+          p {
+              color: #555;
+          }
+
+          .contact-info {
+              margin-top: 20px;
+          }
+      </style>
+  
+  </body>
+
 </html>
+<link rel="stylesheet" href="style.css">
+<script src="scripts.js"></script>
